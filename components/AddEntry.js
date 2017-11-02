@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import TextButton from './TextButton'
 import { Ionicons } from '@expo/vector-icons'
+import { red, orange, blue, lightPurp, pink, purple, white } from '../utils/colors'
 
 function SubmitBtn ({ onPress }) {
   return (
-    <TouchableOpacity
-      onPress={onPress}>
-        <Text>SUBMIT</Text>
+    <TouchableOpacity onPress={onPress}>
+      <Text>SUBMIT</Text>
     </TouchableOpacity>
   )
 }
@@ -93,7 +93,7 @@ export default class AddEntry extends Component {
           <Text>
             You already logged your information for today!
           </Text>
-          <TextButton onPress={this.reset}>
+          <TextButton style={{padding: 10}} onPress={this.reset}>
             Reset
           </TextButton>
         </View>
@@ -107,7 +107,7 @@ export default class AddEntry extends Component {
           const value = this.state[key]
 
           return (
-            <View key={key} style={styles.row}>
+            <View key={key}>
               {getIcon()}
               {type === 'slider'
                 ? <UdaciSlider
@@ -129,3 +129,49 @@ export default class AddEntry extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // display: 'flex',
+
+    padding: 20,
+    backgroundColor: white
+  },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'center',
+  },
+  iosSubmitBtn: {
+    backgroundColor: purple,
+    padding: 10,
+    borderRadius: 7,
+    height: 45,
+    marginLeft: 40,
+    marginRight: 40,
+  },
+  AndroidSubmitBtn: {
+    backgroundColor: purple,
+    padding: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
+    height: 45,
+    borderRadius: 2,
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  submitBtnText: {
+    color: white,
+    fontSize: 22,
+    textAlign: 'center',
+  },
+  center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 30,
+    marginRight: 30,
+  },
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 
-export default const TextButton = ({ children, onPress }) => {
+export default function TextButton ({ children, onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <Text>

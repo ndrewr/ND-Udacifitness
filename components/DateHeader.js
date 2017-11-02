@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-export default const DateHeader = () => {
+export default function DateHeader () {
   return (
     <Text>
       DateHeader
