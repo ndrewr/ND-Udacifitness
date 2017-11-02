@@ -1,9 +1,21 @@
 // utils/helpers.js
 
 import React from 'react'
-import { View } from 'react-native'
+import { View, Stylesheet } from 'react-native'
 import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { white } from './colors'
+import { red, orange, blue, lightPurp, pink, white } from './colors'
+
+const styles = StyleSheet.create({
+  iconContainer: {
+    padding: 5,
+    borderRadius: 8,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 20
+  },
+})
 
 export function getMetricMetaInfo (metric) {
   const info = {
