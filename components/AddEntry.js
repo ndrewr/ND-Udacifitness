@@ -7,6 +7,7 @@ import DateHeader from './DateHeader'
 import TextButton from './TextButton'
 import { Ionicons } from '@expo/vector-icons'
 import { red, orange, blue, lightPurp, pink, purple, white } from '../utils/colors'
+import { submitEntry, removeEntry } from '../utils/helpers'
 
 function SubmitBtn ({ onPress }) {
   return (
@@ -66,6 +67,7 @@ export default class AddEntry extends Component {
     // Navigate to home
 
     // Save to "DB"
+    submitEntry({ key, entry })
 
     // Clear local notification
   }
@@ -78,6 +80,7 @@ export default class AddEntry extends Component {
     // Route to Home
 
     // Update "DB"
+    removeEntry(key)
   }
 
   render() {
